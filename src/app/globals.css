@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: var(--font-bricolage), var(--font-plex-sans), ui-sans-serif,
+    sans-serif;
+
+  /* Shell collapses to a top bar below this width */
+  --breakpoint-shell: 56.25rem;
+
+  /* Surfaces & lines */
+  --color-paper: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-sunken: #eef1f7;
+  --color-selected: #f0f6ff;
+  --color-line: #e2e6ee;
+  --color-line-strong: #c6ccda;
+
+  /* Text & accent */
+  --color-ink: #10141f;
+  --color-ink-soft: #57617a;
+  --color-faint: #8a93a8;
+  --color-accent: #146ef5;
+  --color-accent-deep: #0f5ad1;
+  --color-accent-line: #bcd7fb;
+
+  /* Diff — reserved. Red/green never mean anything else. */
+  --color-removed: #c13030;
+  --color-removed-bg: #fbe9e9;
+  --color-removed-chip: #a03030;
+  --color-added: #0e7a3d;
+  --color-added-bg: #dff3e7;
+  --color-added-chip: #0e6b38;
+
+  /* Amber — the only warn color */
+  --color-warn: #8a5a00;
+  --color-warn-bg: #fbf3e0;
+  --color-warn-line: #eedfb8;
+  --color-warn-field: #c6a23e;
+  --color-warn-field-bg: #fffdf6;
+
+  /* Dark panel — second surface family */
+  --color-dark: #0d1220;
+  --color-dark-line: #232b40;
+  --color-dark-active: #1a2236;
+  --color-dark-text: #c7d0e4;
+  --color-ok: #7ee2a0;
+
+  --shadow-overlay: 0 8px 32px rgba(16, 20, 31, 0.14);
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-paper font-sans text-ink antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

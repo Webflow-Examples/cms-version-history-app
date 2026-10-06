@@ -1,0 +1,17 @@
+{
+  "name": "cms-tools-smoke",
+  "main": "../.open-next/worker.js",
+  "compatibility_date": "2025-03-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "binding": "ASSETS", "directory": "../.open-next/assets" },
+  "d1_databases": [{ "binding": "DB", "database_name": "smoke", "database_id": "smoke-local-only" }],
+  "kv_namespaces": [{ "binding": "CACHE", "id": "smoke-local-only" }],
+  "r2_buckets": [{ "binding": "SNAPSHOTS", "bucket_name": "smoke-local-only" }],
+  "vars": {
+    "WEBFLOW_SITE_ID": "smoke-site",
+    "WEBFLOW_SITE_TOKEN": "local-test-only",
+    "APP_PASSWORD": "local-smoke-password",
+    "SESSION_SECRET": "local-smoke-session-secret",
+    "WEBFLOW_API_BASE": "http://127.0.0.1:8798/v2"
+  }
+}

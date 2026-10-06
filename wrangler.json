@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cms-version-history-app",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-03-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "CMS_TOOLS_DB",
+      "database_id": "local-dev-placeholder"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "local-dev-placeholder"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "SNAPSHOTS",
+      "bucket_name": "snapshots"
+    }
+  ]
+}

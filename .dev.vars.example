@@ -1,0 +1,42 @@
+# Copy to .dev.vars for local dev (picked up by wrangler/miniflare and `next dev`).
+# In Webflow Cloud, set these as environment variables/secrets on the environment.
+
+# Site API token (Site settings → Apps & integrations → API access).
+# Needs: cms:read, cms:write, sites:read, sites:write
+# Use a site token; the app's webhook verification does not implement OAuth secrets.
+WEBFLOW_SITE_TOKEN=
+
+# The CMS SOURCE site this deployment manages (not necessarily the Cloud host site)
+WEBFLOW_SITE_ID=
+
+# OPTIONAL: override for the app's public base URL (webhook registration).
+# When unset, setup derives it from the request it arrives on — so the same
+# config works on production, staging, or preview domains. Set it only when
+# the app is reached through a proxy that hides the public host.
+# Include the app mount, e.g. https://your-host.webflow.io/app; do not append /api/...
+# APP_URL=
+
+# Shared password for all UI capabilities, including restore/publish (no per-user roles)
+APP_PASSWORD=
+
+# Random string used to sign session cookies (e.g. `openssl rand -hex 32`)
+# Rotate this too when all existing sessions must be invalidated.
+SESSION_SECRET=
+
+# OPTIONAL (local E2E only): point the Webflow API client at a mock server
+# so sync/backfill/ingest fallbacks can be exercised without real credentials.
+# Leave unset in production.
+# WEBFLOW_API_BASE=http://localhost:8787/v2
+
+# OPTIONAL: dedicated random secret for an external scheduler calling
+# POST /app/api/jobs/run with Authorization: Bearer <JOBS_SECRET>.
+# This endpoint replays pending events and resumes running backfills.
+# JOBS_SECRET=
+
+# OPTIONAL: public website bases for the item header's View live / View staging links.
+# These are the CMS WEBSITE URLs, not the Cloud app URL or its /app mount.
+# Defaults: connected custom domains and https://<site-shortName>.webflow.io.
+# If several custom domains exist, View live offers a chooser; this override pins one.
+# Bases may include a shared path prefix (e.g. https://www.example.com/en).
+# PRODUCTION_SITE_URL=https://www.example.com
+# STAGING_SITE_URL=https://example.webflow.io
