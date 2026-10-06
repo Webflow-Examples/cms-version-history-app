@@ -1,6 +1,6 @@
 # CMS Version History App
 
-**An MIT-licensed example template for Webflow Cloud.**
+**An example template for Webflow Cloud.**
 
 [![Deploy to Webflow](https://webflow.com/img/deploy-dark.svg)](https://webflow.com/dashboard/cloud/deploy?repo=https://github.com/Webflow-Examples/cms-version-history-app)
 
